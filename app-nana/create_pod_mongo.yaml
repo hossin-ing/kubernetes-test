@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mongodb
+  labels:
+    env: production
+    owner: iam
+    webserver: mongo
+    country: alg
+spec:
+  containers:
+  - name: mongo
+    image: mongo
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 3000
